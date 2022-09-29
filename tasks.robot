@@ -19,7 +19,7 @@ ${WEBSITE_URL}
 
 
 *** Tasks ***
-Get urls from Vault and set as Global Variables
+Get url from Vault and set as Global Variable
     ${url}=    Get Secret    url
     ${WEBSITE_URL}=    Set Variable    ${url}[website_url]
     Set Global Variable    ${WEBSITE_URL}    ${WEBSITE_URL}
@@ -28,7 +28,6 @@ Order robots from RobotSpareBin Industries Inc
     Open website
     ${orders}=    Download orders file
     FOR    ${row}    IN    @{orders}
-       #IF    ${row}[Order number] == 2    BREAK    #POISTA TÄMÄ RIVI MYÖHEMMIN
        Give consent
        Fill in the order form    ${row}
        Preview the order
